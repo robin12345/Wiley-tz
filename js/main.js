@@ -23,6 +23,6 @@ require.config({
     }
 });
 
-require(["app/app"], function (App) {
+require(["app/app", "app/backbone-extend"], function (App) {
     App.methods.start();
 });
