@@ -4,6 +4,7 @@ define(function (require) {
     var template = require("text!../templates/layout.tpl"),
         FormModel = require("../model/item"),
         ListView = require("./list"),
+        Validation = require("../../app/behaviors/validation"),
         Marionette = require("marionette");
 
     var globalChannel = Backbone.Radio.channel("global"),
@@ -12,6 +13,11 @@ define(function (require) {
     MainLayout = Marionette.View.extend({
         el: "#main-region",
         template: _.template(template),
+        behaviors: {
+            validation: {
+                behaviorClass: Validation
+            }
+        },
 
         regions: {
             listRegion: '#region-list'
@@ -37,6 +43,11 @@ define(function (require) {
             e.preventDefault();
 
             this.model.set("task", input.val());
+            this.model.isValid();
+
+            if (!_.isEmpty(this.model.validationError)) {
+                return null;
+            }
 
             this.addTask();
         },
