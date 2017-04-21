@@ -1,0 +1,64 @@
+input {
+    outline: none;
+}
+
+.box-form {
+    text-align: center;
+
+    h1 {
+        color: #464646;
+    }
+
+    .form {
+        position: relative;
+        display: inline-flex;
+        margin: 20px 0;
+    }
+
+    input[name=task] {
+        width: 330px;
+        padding: 15px 20px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        color: #3c3c3c;
+
+        &:focus {
+            border-bottom: 1px solid #008efb;
+        }
+    }
+
+    input[type=submit] {
+        margin-left: 40px;
+        padding: 15px 40px;
+        border: none;
+        background-color: #eee;
+        color: #3c3c3c;
+        &:active {
+            background: #424242;
+            color: #fff;
+        }
+        &:hover {
+            color: #fff;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+        }
+    }
+
+    .error {
+        position: absolute;
+        display: none;
+        top: -25px;
+        left: 20px;
+        color: #008efb;
+        font-size: 13px;
+
+        &.show-error {
+            display: block;
+        }
+    }
+}
+
+.app-container {
+    margin: 0 auto;
+    max-width: 800px;
+    font-family: Georgia,Helvetica,Arial,sans-serif;
+}

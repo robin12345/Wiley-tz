@@ -1,0 +1,149 @@
+#region-list {
+    .row {
+        position: relative;
+        &:nth-child(even) {
+            background-color: #eee;
+        }
+        &:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        &:hover {
+            background-color: #e8e8e8;
+        }
+    }
+    .field {
+        padding: 15px 75px;
+        color: #5f5f5f;
+        list-style: none;
+
+        .completed {
+            position: absolute;
+            display: flex;
+            left: 0;
+            top: 0;
+            width: 62px;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                margin-top: -9px;
+                left: 23px;
+                height: 15px;
+                width: 15px;
+                border-color: #898989;
+                border-style: solid;
+                border-width: 2px 2px 2px 2px;
+                border-radius: 50%;
+            }
+
+            &.true:before {
+                margin-top: -10px;
+                top: 50%;
+                left: 29px;
+                width: 7px;
+                border-color: #008efb;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+                border-radius: 0;
+            }
+
+            &:hover {
+                background: #424242;
+                &:before {
+                    border-color: #fff;
+                }
+            }
+
+            &:active {
+                &:before {
+                    border-color: #008efb;
+                }
+            }
+        }
+
+        .true + .text {
+            text-decoration: line-through;
+        }
+    }
+
+    .close {
+        position: absolute;
+        display: flex;
+        right: 0;
+        top: 0;
+        width: 60px;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+            background: #424242;
+            color: #fff;
+        }
+    }
+    .update {
+        position: absolute;
+        display: flex;
+        right: -50px;
+        top: 50%;
+        margin-top: -12px;
+        width: 25px;
+        height: 25px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background: url("../../images/sprite.png") 0 -25px no-repeat;
+        &:hover {
+            background: url("../../images/sprite.png") 0 0 no-repeat;
+        }
+
+        &.edit {
+            background: url("../../images/sprite.png") 0 0 no-repeat;
+            &:hover {
+                background: url("../../images/sprite.png") 0 -25px no-repeat;
+            }
+        }
+    }
+    input[name=edit] {
+        padding: 10px 20px;
+        width: 655px;
+        border: none;
+        border-bottom: 1px solid #c9c9c9;
+        color: #5f5f5f;
+        background: white;
+        box-sizing: border-box;
+
+        &:focus {
+            border-bottom: 1px solid #008efb;
+        }
+    }
+    input[type=submit] {
+        position: absolute;
+        display: flex;
+        left: 0;
+        top: 0;
+        width: 62px;
+        height: 100%;
+        border: none;
+        border-bottom: 1px solid #008efb;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #fff;
+        background-color: #7191c6;
+
+        &:hover {
+            background-color: #424242;
+        }
+
+        &:active {
+            color: #008efb;
+        }
+    }
+}
