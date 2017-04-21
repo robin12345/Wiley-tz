@@ -1,0 +1,19 @@
+{
+  "name": "Wiley proj",
+  "authors": [
+    "Andryushkov Konstantin <andryushkov-ky@fxclub.org>"
+  ],
+  "description": "Test task for Wiley",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "requirejs": "^2.3.3",
+    "requirejs-tpl": "*"
+  }
+}
