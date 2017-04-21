@@ -7,6 +7,15 @@ define(function (require) {
         ToDoCollection;
 
     ToDoCollection = Backbone.Collection.extend({
+        comparator: function (a, b) {
+            var x, y;
+
+            x = a.get("task").toLowerCase();
+            y = b.get("task").toLowerCase();
+
+            if (x == y) return 0;
+            return x > y ? 1 : -1;
+        },
 
         initialize: function () {
             this.listenTo(globalChannel, "task:create", this.createModel);
